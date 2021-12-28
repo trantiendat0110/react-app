@@ -1,11 +1,11 @@
 import {useEffect} from 'react'
 import './home.scss'
-function Home(props) {
+function Home({ListSong}) {
     useEffect(() => {
         const thumb = document.querySelector('#thumb')
   
         // xử lý sự kiên scroll list
-        document.addEventListener('scroll', (e) => {
+        document.addEventListener('scroll', () => {
           var scroll = window.scrollY
           var newWidth = 200 - scroll
           thumb.style.width = newWidth
@@ -18,7 +18,7 @@ function Home(props) {
         <div className='' id='home'>
             <div id='music'>
                 <div id="playList">
-                    {props.ListSong.map((song, index) => {
+                    {ListSong.map((song, index) => {
                         return (
                             <div key={index} className='scorse'>  
                                 <img src={song.img} alt=''/>

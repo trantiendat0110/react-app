@@ -10,14 +10,14 @@ export default function User() {
                 <input placeholder='PassWord'></input>
             </div>
             <h4>Lấy lại mật khẩu</h4>
-            <a className='sign' href='/'>Sign In</a>
+            <a className='sign' href='https://trantiendat0110.github.io/react-app/'>Sign In</a>
             <h5>Tiếp tục với !</h5>
             <div className='link'>
-                <a href='/'><i style={{color: '#334fdb'}} className="fab fa-facebook"></i></a>
-                <a href='/'><i style={{color: 'brown'}} className="fab fa-google"></i></a>
-                <a href='/'><i style={{color: '#333'}} className="fab fa-apple"></i></a>
+                <a href='https://trantiendat0110.github.io/react-app/'><i style={{color: '#334fdb'}} className="fab fa-facebook"></i></a>
+                <a href='https://trantiendat0110.github.io/react-app/'><i style={{color: 'brown'}} className="fab fa-google"></i></a>
+                <a href='https://trantiendat0110.github.io/react-app/'><i style={{color: '#333'}} className="fab fa-apple"></i></a>
             </div>
-            <p>Không có tài khoản <a href='/' style={{color: 'red'}}>đăng lý ở đây</a></p>
+            <p>Không có tài khoản <a href='https://trantiendat0110.github.io/react-app/' style={{color: 'red'}}>đăng lý ở đây</a></p>
         </div>
     )
 }

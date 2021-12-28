@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 import './Navigation.scss'
 import {useEffect, useRef} from 'react'
 
@@ -9,14 +8,15 @@ const $$ = document.querySelectorAll.bind(document)
 export default function Navigation() {
     const user = useRef()
     const home = useRef()
-
-    console.log(user)
     useEffect(() => {
-        // xử lý ẩn hiện thumb 
+        // xử lý ẩn Chuyển tab
         user.current.onclick = () => {
+            $('#home').classList.add('displayNone')
+            $('#user').classList.remove('displayNone')
             $('#home_main').classList.add('displayNone')
         }
         home.current.onclick = () => {
+            $('#home').classList.remove('displayNone')
             $('#home_main').classList.remove('displayNone')
         }
 
@@ -43,10 +43,10 @@ export default function Navigation() {
             </div>
             <ul id='nav'>
                 <li className='music active' id='music'>
-                    <Link to='/'><i ref={home} className="fal fa-music"></i></Link>
+                    <i ref={home} className="fal fa-music"></i>
                 </li>
                 <li  className='user'>
-                    <Link to='/User'><i ref={user} className="fal fa-user"></i></Link>
+                    <i ref={user} className="fal fa-user"></i>
                 </li>
             </ul> 
         </>

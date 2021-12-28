@@ -67,10 +67,8 @@ function App() {
   return (
     <div className="App">
       <Navigation></Navigation>
-      <Routes>
-        <Route path='/' element={<Home ListSong={ListSong}></Home>}></Route>
-        <Route path='/User' element={<User></User>}></Route>
-      </Routes>
+      <Home ListSong={ListSong}></Home>
+      <User></User>
       <NavMusic ListSong={ListSong}></NavMusic>
     </div>
   );

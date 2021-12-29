@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/react-app/static/css/main.e94a8ac9.css",
-    "main.js": "/react-app/static/js/main.2d6d4a3d.js",
+    "main.css": "/react-app/static/css/main.0ffc6ae0.css",
+    "main.js": "/react-app/static/js/main.5586c592.js",
     "static/media/AmThamBenEmPianoCover-AnCoong-4117631.mp3": "/react-app/static/media/AmThamBenEmPianoCover-AnCoong-4117631.e1f358d0d559a0a0a43a.mp3",
     "static/media/BuocQuaMuaCoDon-Vu-6879419.mp3": "/react-app/static/media/BuocQuaMuaCoDon-Vu-6879419.0df36a7aabbd73ec4e1d.mp3",
     "static/media/Mo-VuCatTuong-5958629.mp3": "/react-app/static/media/Mo-VuCatTuong-5958629.361cdbb47f1b9785ed08.mp3",
@@ -17,11 +17,11 @@
     "static/media/HenEmkiepSau.jpg": "/react-app/static/media/HenEmkiepSau.9aec682c93b9eb3c18de.jpg",
     "static/media/LaLung.jfif": "/react-app/static/media/LaLung.f1af1d0e4d9287c86ddf.jfif",
     "index.html": "/react-app/index.html",
-    "main.e94a8ac9.css.map": "/react-app/static/css/main.e94a8ac9.css.map",
-    "main.2d6d4a3d.js.map": "/react-app/static/js/main.2d6d4a3d.js.map"
+    "main.0ffc6ae0.css.map": "/react-app/static/css/main.0ffc6ae0.css.map",
+    "main.5586c592.js.map": "/react-app/static/js/main.5586c592.js.map"
   },
   "entrypoints": [
-    "static/css/main.e94a8ac9.css",
-    "static/js/main.2d6d4a3d.js"
+    "static/css/main.0ffc6ae0.css",
+    "static/js/main.5586c592.js"
   ]
 }

@@ -1,3 +1,17 @@
+
+#downUp{
+    position: fixed;
+    bottom: 190px;
+    color: #fff;
+    margin: auto;
+    border-radius: 5px;
+    background-color: crimson;
+    left: 0;
+    padding: 0px 15px 5px 15px;
+    font-size: 25px;
+    transition: ease .3s, top ease .3s .3s, transform ease .3s;
+}
+
 .nav_home {
     z-index: 1000;
     background-color: #fff;
@@ -5,8 +19,8 @@
     bottom: 30px;
     padding-bottom: 50px;
     width: 100%;
-
     border-top: solid 1px #ccc;
+    transition: ease .3s, top ease .3s .3s, transform ease .3s;
     #start {
         i {
             font-size: 30px;

@@ -26,9 +26,10 @@ export default function NavMusic(props) {
         const startPause = $('#start')
         const thumb = $('#thumb')
         const pInHeader = $('.header p')
+        const downUp = $('#downUp')
         const app = {
-            
           curentIndex: 0,
+          isNav: true,
           isplay: true,
           
         // ///////////// Lang nghe su kien ///////////////////
@@ -79,6 +80,23 @@ export default function NavMusic(props) {
                 audio.onended = () => {
                     app.nextSong()
                 }
+                //  xử lý bật tắt navmussic 
+                downUp.onclick = () => {
+                    if (app.isNav) {
+                        app.isNav = !app.isNav 
+                        downUp.innerHTML = '<i class="fas fa-sort-up"></i>'
+                        downUp.style.bottom = 55 + 'px'
+                        $('.nav_home').style.bottom =  -105 + 'px'
+
+                    }
+                    else  {
+                        app.isNav = !app.isNav 
+                        downUp.innerHTML = '<i class="fas fa-sort-down"></i>'
+                        downUp.style.bottom = 190 + 'px'
+                        $('.nav_home').style.bottom =  30 + 'px'
+                        
+                    }
+                }
                 
             },
             nextSong: () => {
@@ -109,6 +127,11 @@ export default function NavMusic(props) {
       }, [])
     return (
         <>
+            <div id='downUp'>
+                <i className="fas fa-sort-down"></i>
+            </div>
+            {/* <div id='up'>
+            </div> */}
             <div className="nav_home">
                 <div className="main_nav_home">
                     <button id="repeat"><i className="fas fa-repeat"></i></button>

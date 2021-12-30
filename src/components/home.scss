@@ -10,34 +10,9 @@
         padding: 5px;
     }
 }
-#home_main {
-    z-index: 1000;
-    border-bottom: solid 1px #ccc;
-    margin-left: 10px;
-    margin-right: 10px;
-    padding-bottom: 20px;
-    background-color: #fff;
-    width: 100%;
-    position: fixed;
-    top: 0;
-    .header {
-        h2 {
-            color: crimson;
-            font-weight: 400;
-            padding: 5px;
-        }
-        p {
-            color: chocolate;
-            opacity: 0.5;
-            padding: 5px;
-        }
-    }
-    #thumb {
-        border-radius: 50%;
-    }
-}
+
 #playList {
-    margin-top: 333px;
+    margin-top: 350px;
     margin-bottom: 200px;
     .scorse {
         box-shadow: 0 0 5px 1px rgba(245, 6, 6, 0.3);
@@ -54,6 +29,17 @@
             width: 80px;
             border-radius: 50%;
         }
+    }
+    .activeSong {
+
+        img {
+            border: solid 2px #fff;
+        }
+        background-color: crimson;
+        color: #ccc;
+        box-shadow: 0 0 5px 2px rgb(255, 230, 0);
+        transition: ease 0.7s, top ease 0.7s 0.7s, transform ease 0.7s;
+
     }
     
 }

@@ -10,6 +10,7 @@ import song6 from '../../assets/Music/LaLung-Vu-4749614.mp3'
 import song7 from '../../assets/Music/Mo-VuCatTuong-5958629.mp3'
 
 
+
 const URLSong = [song1, song2, song3, song4, song5, song6, song7]
 const $ = document.querySelector.bind(document)
 const $$ = document.querySelectorAll.bind(document)
@@ -27,10 +28,20 @@ export default function NavMusic(props) {
         const thumb = $('#thumb')
         const pInHeader = $('.header p')
         const downUp = $('#downUp')
-        const app = {
+        const songs = $$('.scorse')
+        const time_s = $('.time_s')    
+        const time_m = $('.time_m')
+        const fullTime_s = $('.fullTime_s')
+        const fullTime_m = $('.fullTime_m')
+        const userS = $('.user')
+        const homeS = $('.home')
+        const navBtn = $$('#nav li')
+        var timeS = 0
+        var timeM = 0
+        var app = {
           curentIndex: 0,
-          isNav: true,
-          isplay: true,
+          isNav: false,
+          isplay: false,
           
         // ///////////// Lang nghe su kien ///////////////////
             handleEvent: () => {
@@ -51,13 +62,14 @@ export default function NavMusic(props) {
                 startPause.onclick = () => {
                     if (app.isplay) {
                         app.isplay = !app.isplay
-                        startPause.innerHTML = `<i class="far fa-pause-circle"></i>`
-                        audio.play()
+                        startPause.innerHTML = `<i class="fa fa-play-circle"></i>`
+                        audio.pause()
+                        
                     }
                     else {
                         app.isplay = !app.isplay
-                        startPause.innerHTML = `<i class="fa fa-play-circle"></i>`
-                        audio.pause()
+                        startPause.innerHTML = `<i class="far fa-pause-circle"></i>`
+                        audio.play()
                     }
 
                 }
@@ -80,24 +92,59 @@ export default function NavMusic(props) {
                 audio.onended = () => {
                     app.nextSong()
                 }
+                // xử lý focus tab
+                navBtn.forEach((Btn) => {
+                    Btn.onclick = (e) => {
+                        console.log('active')
+                        $('.active').classList.remove('active')
+                        Btn.classList.add('active')
+                        app.downNav()
+                    }
+                })
                 //  xử lý bật tắt navmussic 
                 downUp.onclick = () => {
                     if (app.isNav) {
-                        app.isNav = !app.isNav 
-                        downUp.innerHTML = '<i class="fas fa-sort-up"></i>'
-                        downUp.style.bottom = 55 + 'px'
-                        $('.nav_home').style.bottom =  -105 + 'px'
-
+                        app.upNav()
                     }
                     else  {
-                        app.isNav = !app.isNav 
-                        downUp.innerHTML = '<i class="fas fa-sort-down"></i>'
-                        downUp.style.bottom = 190 + 'px'
-                        $('.nav_home').style.bottom =  30 + 'px'
-                        
+                        app.downNav()
                     }
                 }
+                // xử lý hết bài
+                audio.onended = () => {
+                    app.nextSong()
+                }
+                // xử lý thời gian âm thanh
+    
+
+                // xử lý click song phát song và xử lý active song
+
+                songs.forEach((song, index) => {
+                    song.onclick = () => {
+                        if ($('.activeSong')) {
+                            $('.activeSong').classList.remove('activeSong')
+                        }
+                        app.curentIndex = index
+                        app.loadCurentSong()
+                        audio.play()
+                        song.setAttribute('class', 'scorse activeSong')
+                    }
+
+                })
+
                 
+            },
+            upNav: () => {
+                app.isNav = !app.isNav
+                downUp.innerHTML = '<i class="fas fa-sort-down"></i>'
+                downUp.style.bottom = 190 + 'px'
+                $('.nav_home').style.bottom =  30 + 'px'
+            },
+            downNav: () => {
+                app.isNav = !app.isNav
+                downUp.innerHTML = '<i class="fas fa-sort-up"></i>'
+                downUp.style.bottom = 55 + 'px'
+                $('.nav_home').style.bottom =  -105 + 'px'
             },
             nextSong: () => {
                 app.curentIndex++

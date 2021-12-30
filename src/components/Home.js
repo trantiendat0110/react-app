@@ -10,7 +10,7 @@ function Home({ListSong}) {
           var newWidth = 200 - scroll
           thumb.style.width = newWidth
           thumb.style.width =  newWidth > 0 ? newWidth + 'px' : 0
-          thumb.style.opacity = newWidth / 200
+          thumb.style.opacity = newWidth / 200  
         })
       }, [])
 
@@ -20,7 +20,7 @@ function Home({ListSong}) {
                 <div id="playList">
                     {ListSong.map((song, index) => {
                         return (
-                            <div key={index} className='scorse'>  
+                            <div key={index} className={'scorse'}>  
                                 <img src={song.img} alt=''/>
                                 <div className='title'>
                                     <h3>{song.name}</h3>

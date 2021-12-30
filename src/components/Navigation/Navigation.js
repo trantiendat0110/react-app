@@ -6,28 +6,19 @@ const $ = document.querySelector.bind(document)
 const $$ = document.querySelectorAll.bind(document)
 
 export default function Navigation() {
-    const user = useRef()
-    const home = useRef()
+    const userRef = useRef()
+    const homeRef = useRef()
     useEffect(() => {
         // xử lý ẩn Chuyển tab
-        user.current.onclick = () => {
+        userRef.current.onclick = () => {
             $('#home').classList.add('displayNone')
             $('#user').classList.remove('displayNone')
             $('#home_main').classList.add('displayNone')
         }
-        home.current.onclick = () => {
+        homeRef.current.onclick = () => {
             $('#home').classList.remove('displayNone')
             $('#home_main').classList.remove('displayNone')
         }
-
-        // xử lý focus tab
-        const navBtn = $$('#nav li')
-        navBtn.forEach((Btn) => {
-            Btn.onclick = (e) => {
-                $('.active').classList.remove('active')
-                Btn.classList.add('active')
-            }
-        })
     }, [])
 
     return (
@@ -40,13 +31,26 @@ export default function Navigation() {
                 <div className="cd">
                     <img id="thumb" src='' alt="" style={{width: 200}}/>
                 </div>
+                <div style={{
+                    display: 'flex', 
+                    justifyContent: 'space-between'
+                }}>
+                    <ul className='time'>
+                        <li className='time_m'>0 : </li>
+                        <li className='time_s'>0</li>
+                    </ul>
+                    <ul className='fullTime'>
+                        <li className='fullTime_m'>10 : </li>
+                        <li className='fullTime_s'>10</li>
+                    </ul>
+                </div>
             </div>
             <ul id='nav'>
                 <li className='music active' id='music'>
-                    <i ref={home} className="fal fa-music"></i>
+                    <i ref={homeRef} className="fal fa-music"></i>
                 </li>
                 <li  className='user'>
-                    <i ref={user} className="fal fa-user"></i>
+                    <i ref={userRef} className="fal fa-user"></i>
                 </li>
             </ul> 
         </>
